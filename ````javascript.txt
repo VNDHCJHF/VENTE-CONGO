@@ -1,0 +1,46 @@
+````javascript
+// ...existing code...
+function addToCart(name, price, imageUrl) {
+  cart.push({name, price, imageUrl});
+  total += price;
+
+  // Mettre à jour l'affichage
+  document.getElementById("cart").innerText = `🛒 Panier (${cart.length})`;
+  document.getElementById("cart-total").innerText = total;
+
+  let list = document.getElementById("cart-list");
+  let item = document.createElement("li");
+
+  let img = document.createElement("img");
+  img.src = imageUrl;
+  img.alt = name;
+  img.style.width = "50px";
+  img.style.marginRight = "8px";
+  img.style.verticalAlign = "middle";
+
+  item.appendChild(img);
+  item.appendChild(document.createTextNode(`${name} - ${price} MAD`));
+  list.appendChild(item);
+}
+````
+
+````html
+<!-- ...existing code... -->
+    <div class="product">
+      <img src="images/article1.jpg" alt="Article 1">
+      <h2>Article 1</h2>
+      <p>Prix : 100 MAD</p>
+      <button onclick="addToCart('Article 1', 100, 'images/article1.jpg')">Ajouter au panier</button>
+    </div>
+<!-- ...existing code... -->
+````
+
+````css
+/* ...existing code... */
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+````
