@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique d'Articles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="snow-canvas"></canvas>
+
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg"
+         alt="Drapeau RDC" class="logo">
+    <h1>FOOD</h1>
+    <nav class="main-nav">
+      <a href="#accueil">Accueil</a>
+      <span class="nav-contact">
+        <strong>Contact :</strong>
+        <a href="mailto:mosisaemeraude@gmail.com">mosisaemeraude@gmail.com</a>
+        |
+        <a href="https://wa.me/212771805753" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+               alt="WhatsApp" style="width:18px; vertical-align:middle; margin-right:6px;">
+          WhatsApp: +212 77 180 5753
+        </a>
+      </span>
+      <a href="#commande">Passer la commande</a>
+    </nav>
+    <div id="cart">🛒 Panier (0)</div>
+  </header>
+
+  <div class="welcome-banner">
+    <p><strong>Bienvenue chez Emy Sapphire Congolese</strong></p>
+  </div>
+
+  <main id="accueil">
+    <div class="product">
+      <h2>Fubwa</h2>
+      <img src="https://i0.wp.com/www.sloditech.com/wp-content/uploads/2020/07/fumbwa.jpg?fit=458,458&ssl=1"
+           alt="Fubwa 1"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <img src="https://www.chdimport.com/wp-content/uploads/2015/02/chd_0033_FUMBWA.jpg"
+           alt="Fubwa 2"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <label for="price-fubwa">Prix :</label>
+      <select id="price-fubwa" class="price-select" onchange="toggleCustomPrice(this, 'custom-price-fubwa')">
+        <option value="30">30 DH</option>
+        <option value="35">35 DH</option>
+        <option value="45">45 DH</option>
+        <option value="50">50 DH</option>
+        <option value="plus">50 DH ou plus</option>
+      </select>
+      <input type="number" id="custom-price-fubwa" class="custom-price" placeholder="Prix personnalisé" min="50" style="display:none; margin-top:10px;">
+      <button onclick="addToCart('Fubwa', 'price-fubwa', 'custom-price-fubwa')">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+      <h2>Matembele</h2>
+      <img src="https://makusa243.wordpress.com/wp-content/uploads/2020/02/img-20200207-wa0026.jpg?w=474"
+           alt="Matembele 1"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <img src="https://usercontent.one/wp/www.goldfoodafrica.com/wp-content/uploads/2021/08/matembele.jpg?media=1738239251"
+           alt="Matembele 2"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <label for="price-matembele">Prix :</label>
+      <select id="price-matembele" class="price-select" onchange="toggleCustomPrice(this, 'custom-price-matembele')">
+        <option value="30">30 DH</option>
+        <option value="35">35 DH</option>
+        <option value="45">45 DH</option>
+        <option value="50">50 DH</option>
+        <option value="plus">50 DH ou plus</option>
+      </select>
+      <input type="number" id="custom-price-matembele" class="custom-price" placeholder="Prix personnalisé" min="50" style="display:none; margin-top:10px;">
+      <button onclick="addToCart('Matembele', 'price-matembele', 'custom-price-matembele')">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+      <h2>Pondu</h2>
+      <img src="https://kodamer.fr/wp-content/uploads/2023/05/PONDU-1.png"
+           alt="Pondu"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <label for="price-pondu">Prix :</label>
+      <select id="price-pondu" class="price-select" onchange="toggleCustomPrice(this, 'custom-price-pondu')">
+        <option value="30">30 DH</option>
+        <option value="35">35 DH</option>
+        <option value="45">45 DH</option>
+        <option value="50">50 DH</option>
+        <option value="plus">50 DH ou plus</option>
+      </select>
+      <input type="number" id="custom-price-pondu" class="custom-price" placeholder="Prix personnalisé" min="50" style="display:none; margin-top:10px;">
+      <button onclick="addToCart('Pondu', 'price-pondu', 'custom-price-pondu')">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+      <h2>MAKAYABU</h2>
+      <img src="https://imgs.search.brave.com/gUpDkhIkfDuvYR_JzuXMjzNroX9cFt9ZnQ64rLKgx20/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zb3Rl/a2FyZGMuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI1LzEw/L1NhaXRoZS1NYWth/eWFidS05LWtnLWNh/cnRvbi5qcGc"
+           alt="Makayabu"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <label for="price-makayabu">Prix :</label>
+      <select id="price-makayabu" class="price-select" onchange="toggleCustomPrice(this, 'custom-price-makayabu')">
+        <option value="30">30 DH</option>
+        <option value="35">35 DH</option>
+        <option value="45">45 DH</option>
+        <option value="50">50 DH</option>
+        <option value="plus">50 DH ou plus</option>
+      </select>
+      <input type="number" id="custom-price-makayabu" class="custom-price" placeholder="Prix personnalisé" min="50" style="display:none; margin-top:10px;">
+      <button onclick="addToCart('MAKAYABU', 'price-makayabu', 'custom-price-makayabu')">Ajouter au panier</button>
+    </div>
+    
+     <div class="product">
+      <h2>Ndakala</h2>
+      <img src="https://congo-shop.com/wp-content/uploads/2023/05/Design-sans-titre-72.png"
+           alt="Ndakala"
+           style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <label for="price-ndakala">Prix :</label>
+      <select id="price-ndakala" class="price-select" onchange="toggleCustomPrice(this, 'custom-price-ndakala')">
+        <option value="20">20 DH</option>
+        <option value="35">35 DH</option>
+        <option value="45">45 DH</option>
+        <option value="50">50 DH</option>
+        <option value="plus">50 DH ou plus</option>
+      </select>
+      <input type="number" id="custom-price-ndakala" class="custom-price" placeholder="Prix personnalisé" min="50" style="display:none; margin-top:10px;">
+      <button onclick="addToCart('Ndakala', 'price-ndakala', 'custom-price-ndakala')">Ajouter au panier</button>
+    </div>
+  </main>
+
+  <section id="commande">
+    <h2>Détails du panier</h2>
+    <ul id="cart-list"></ul>
+    <p>Total : <span id="cart-total">0</span> MAD</p>
+
+    <div class="order-summary">
+      <p>Date de commande : <span id="order-date"></span></p>
+      <p>Date de livraison souhaitée : <span id="delivery-date"></span></p>
+      <p>Prix de livraison : <span id="shipping-cost">0</span> MAD</p>
+      <p class="shipping-note">Livraison gratuite pour 5 articles ou plus.</p>
+    </div>
+
+    <h3>Passer la commande</h3>
+    <form id="order-form">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="tel" id="telephone" name="telephone" required>
+
+      <label for="adresse">Adresse :</label>
+      <textarea id="adresse" name="adresse" rows="3" required></textarea>
+
+      <label for="date-commande">Date de commande :</label>
+      <input type="date" id="date-commande" name="date-commande" required>
+
+      <label for="date-livraison">Date de livraison souhaitée :</label>
+      <input type="date" id="date-livraison" name="date-livraison" required>
+
+      <label for="paiement">Moyen de paiement :</label>
+      <select id="paiement" name="paiement" required>
+        <option value="">Choisir...</option>
+        <option value="especes">Espèces</option>
+        <option value="carte">Carte bancaire</option>
+        <option value="mobile">Paiement mobile</option>
+      </select>
+
+      <button type="submit">Valider la commande</button>
+    </form>
+  </section>
+
+  <footer id="contact-footer">
+    <div class="footer-content">
+      <h2>Contact</h2>
+      <p>Email : mosisaemeraude@gmail.com</p>
+      <p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+             alt="WhatsApp" style="width:20px; vertical-align:middle; margin-right:8px;">
+        <a href="https://wa.me/212771805753" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">
+          +212 77 180 5753
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
